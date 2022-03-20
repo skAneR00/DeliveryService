@@ -8,36 +8,89 @@
 import SwiftUI
 
 struct AppMainMenu: View {
+    
+    
+    func GoTo(){
+        
+    }
+    
     var body: some View {
         VStack{
-            ZStack{
-                RoundedRectangle(cornerRadius: 10).frame(width: .infinity, height: 150).ignoresSafeArea().position(x: 214, y: 850).foregroundColor(.gray).opacity(0.9)
-                Text("Actions:").position(x: 60, y: 25).font(.title)
-                  ScrollView(.horizontal) {
-                    HStack(spacing: 20) {
-                        ForEach(0..<5) {_ in
-                            Image("RegistrationBackground")
-                                .resizable()
-                                .frame(width: 150, height: 150)
-                                .onTapGesture {
-                                    print("ItemWasTapped")
-                                }
-                        }
+            
+            Text("Actions:").font(.title)
+            
+            ScrollView(.horizontal) {
+                HStack(spacing: 20) {
+                    ForEach(0..<5) {_ in
+                        Image("RegistrationBackground")
+                            .resizable()
+                            .frame(width: 150, height: 150)
+                            .onTapGesture {
+                                print("ItemWasTapped")
+                            }
                     }
-                }.position(x: 215, y: 120)
-                
-                
-                //DownToolBar
-                
-                Image(systemName: "person.crop.circle").resizable().frame(width: 50, height: 50).position(x: 380, y: 810).onTapGesture{
-                    print("Tapped")
                 }
-                Image(systemName: "magnifyingglass.circle").resizable().frame(width: 50, height: 50).position(x: 295, y: 810)
-                Image(systemName: "cart").resizable().frame(width: 50, height: 50).position(x: 210, y: 810)
-                Image("SpoonPng").resizable().frame(width: 50, height: 50).position(x: 125, y: 810)
-                Image(systemName: "house").resizable().frame(width: 50, height: 50).position(x: 40, y: 810)
-                
             }
+            
+            Text("Restaurants: ").font(.title)
+            
+            ScrollView(.horizontal) {
+                HStack(spacing: 20) {
+                    ForEach(0..<5) {_ in
+                        Image("RegistrationBackground")
+                            .resizable()
+                            .frame(width: 150, height: 150)
+                            .onTapGesture {
+                                print("ItemWasTapped")
+                            }
+                    }
+                }
+            }
+            
+            Text("Productcs: ").font(.title)
+            
+            ScrollView(.horizontal) {
+                HStack(spacing: 20) {
+                    ForEach(0..<5) {_ in
+                        Image("RegistrationBackground")
+                            .resizable()
+                            .frame(width: 150, height: 150)
+                            .onTapGesture {
+                                print("ItemWasTapped")
+                            }
+                    }
+                }
+            }
+            
+            ZStack{
+                //DownToolBar
+                RoundedRectangle(cornerRadius: 10)
+                    .frame(width: .infinity, height: 150)
+                    .ignoresSafeArea()
+                    .foregroundColor(.gray)
+                    .opacity(0.9)
+                HStack(alignment: .top, spacing: 35){
+                    
+                    Image(systemName: "house")
+                        .resizable()
+                        .frame(width: 50, height: 50)
+                    Image("SpoonPng")
+                        .resizable()
+                        .frame(width: 50, height: 50)
+                    Image(systemName: "magnifyingglass.circle")
+                        .resizable()
+                        .frame(width: 50, height: 50)
+                    Image(systemName: "cart")
+                        .resizable()
+                        .frame(width: 50, height: 50)
+                    Image(systemName: "person.crop.circle")
+                        .resizable()
+                        .frame(width: 50, height: 50)
+                        .onTapGesture{
+                            print("Tapped")
+                        }
+                }.frame(width: .infinity, height: 100, alignment: .top)
+            }.position(x: 214,y: 200)
         }
     }
 }

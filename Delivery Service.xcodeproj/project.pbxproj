@@ -12,6 +12,7 @@
 		848028CD27CB6F3D00C2A0A7 /* TestUIFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848028CC27CB6F3D00C2A0A7 /* TestUIFile.swift */; };
 		848424C827D49F6200FB5698 /* UISettingsFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848424C727D49F6200FB5698 /* UISettingsFile.swift */; };
 		84899E3D27D0D4E500363BE2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FEAC2127C7981800CA952E /* ContentView.swift */; };
+		84C1DEA227E71C540093A1E8 /* AppProfileMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C1DEA127E71C540093A1E8 /* AppProfileMenu.swift */; };
 		84FEAC2027C7981800CA952E /* Delivery_ServiceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FEAC1F27C7981800CA952E /* Delivery_ServiceApp.swift */; };
 		84FEAC2427C7981A00CA952E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84FEAC2327C7981A00CA952E /* Assets.xcassets */; };
 		84FEAC2727C7981A00CA952E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84FEAC2627C7981A00CA952E /* Preview Assets.xcassets */; };
@@ -45,6 +46,7 @@
 		845B307727DA186B009AA239 /* AppMainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMainMenu.swift; sourceTree = "<group>"; usesTabs = 0; };
 		848028CC27CB6F3D00C2A0A7 /* TestUIFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUIFile.swift; sourceTree = "<group>"; };
 		848424C727D49F6200FB5698 /* UISettingsFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISettingsFile.swift; sourceTree = "<group>"; };
+		84C1DEA127E71C540093A1E8 /* AppProfileMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppProfileMenu.swift; sourceTree = "<group>"; };
 		84FEAC1C27C7981800CA952E /* Delivery Service.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Delivery Service.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84FEAC1F27C7981800CA952E /* Delivery_ServiceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delivery_ServiceApp.swift; sourceTree = "<group>"; };
 		84FEAC2127C7981800CA952E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				84FEAC2127C7981800CA952E /* ContentView.swift */,
 				84FEAC4927C79B9300CA952E /* Registration.swift */,
 				845B307727DA186B009AA239 /* AppMainMenu.swift */,
+				84C1DEA127E71C540093A1E8 /* AppProfileMenu.swift */,
 				845B307527DA0F90009AA239 /* FirstTimeChecker.swift */,
 				848028CC27CB6F3D00C2A0A7 /* TestUIFile.swift */,
 				84FEAC2327C7981A00CA952E /* Assets.xcassets */,
@@ -284,6 +287,7 @@
 				84FEAC4A27C79B9300CA952E /* Registration.swift in Sources */,
 				84FEFD8727D48EED00FF7E06 /* UserDataBase.xcdatamodeld in Sources */,
 				84899E3D27D0D4E500363BE2 /* ContentView.swift in Sources */,
+				84C1DEA227E71C540093A1E8 /* AppProfileMenu.swift in Sources */,
 				845B307627DA0F90009AA239 /* FirstTimeChecker.swift in Sources */,
 				84FEFD8927D48F9F00FF7E06 /* DataBaseController.swift in Sources */,
 				84FEAC2027C7981800CA952E /* Delivery_ServiceApp.swift in Sources */,
