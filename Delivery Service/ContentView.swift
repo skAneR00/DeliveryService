@@ -11,7 +11,9 @@ struct ContentView: View {
     var body: some View {
 //        TestUIFile()
 //        Registration()
-        AppMainMenu()
+//        AppMainMenu()
+//        UserProfile()
+        AppProfileMenu()
     }
 }
 

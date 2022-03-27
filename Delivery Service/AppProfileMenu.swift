@@ -14,11 +14,19 @@ struct AppProfileMenu: View {
     @Environment(\.managedObjectContext) var  moc
     @FetchRequest(sortDescriptors: []) var UserDatabase: FetchedResults<UserDataBase>
     
+    //For Picker
+    @State private var isAllowNotification = true
+    enum PaymentMethods: String, CaseIterable, Identifiable {
+        case Card, GooglePay, Cash, ApplePay
+        var id: Self { self }
+    }
+    @State private var selectedMethod: PaymentMethods = .Cash
+    
     var body: some View {
         VStack{
             ZStack{
                 RoundedRectangle(cornerRadius: 10)
-                    .foregroundColor(.gray)
+                    .foregroundColor(.green)
                     .frame(width: .infinity, height: 200)
                 HStack{
                     Image(systemName: "person.crop.circle")
@@ -30,13 +38,36 @@ struct AppProfileMenu: View {
                     }
                 }
             }
+            
+            HStack{
+                Text("Balance").font(.bold(.title)()).frame(width: 208, alignment: .leading)
+                Text("---").font(.title).frame(width: 208, alignment: .trailing)
+            }
+            
+            Text("Settings").font(.bold(.title)()).frame(width: 428, alignment: .leading).padding(1)
+            NavigationLink(destination: UserProfile(), label: {
+                Text("Profile").font(.title).frame(width: 428, alignment: .leading).foregroundColor(.black)
+                }
+            ).padding(1).onTapGesture {
+                print("working")
+            }
+            
+            HStack{
+                Text("Payment Methods").font(.title).frame(width: 210, alignment: .leading)
+                Picker("Payment Methods", selection: $selectedMethod) {
+                    Text("Cash").tag(PaymentMethods.Cash).font(.largeTitle)
+                    Text("Card").tag(PaymentMethods.Card).font(.largeTitle)
+                    Text("Google Pay").tag(PaymentMethods.GooglePay).font(.largeTitle)
+                    Text("Apple Pay").tag(PaymentMethods.ApplePay).font(.largeTitle)
+                }.font(.largeTitle).frame(width: 210, alignment: .trailing)
+            }
+            
             ZStack{
                 //DownToolBar
                 RoundedRectangle(cornerRadius: 10)
                     .frame(width: .infinity, height: 150)
                     .ignoresSafeArea()
-                    .foregroundColor(.gray)
-                    .opacity(0.9)
+                    .foregroundColor(.green)
                 HStack(alignment: .top, spacing: 35){
                     Image(systemName: "house")
                         .resizable()
@@ -57,8 +88,8 @@ struct AppProfileMenu: View {
                             print("Tapped")
                         }
                 }.frame(width: .infinity, height: 100, alignment: .top)
-            }
-        }
+            }.position(x: 214, y: 500)
+        }.background(.gray)
     }
 }
 

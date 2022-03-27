@@ -2,6 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="21C52" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="UserDataBase" representedClassName="UserDataBase" syncable="YES" codeGenerationType="class">
         <attribute name="attribute" optional="YES" attributeType="String"/>
+        <attribute name="balance" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="email" optional="YES" attributeType="String"/>
         <attribute name="firstname" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
@@ -10,6 +11,6 @@
         <attribute name="userrole" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="UserDataBase" positionX="-63" positionY="-18" width="128" height="134"/>
+        <element name="UserDataBase" positionX="-63" positionY="-18" width="128" height="149"/>
     </elements>
 </model>
