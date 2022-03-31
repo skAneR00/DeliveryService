@@ -43,7 +43,7 @@ struct UserProfile: View {
                 print("Succeful")
             }
             Spacer()
-        }.background(.gray)
+        }.background(.white)
     }
 }
 

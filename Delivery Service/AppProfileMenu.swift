@@ -23,11 +23,14 @@ struct AppProfileMenu: View {
     @State private var selectedMethod: PaymentMethods = .Cash
     
     var body: some View {
+        NavigationView{
         VStack{
+            
             ZStack{
                 RoundedRectangle(cornerRadius: 10)
-                    .foregroundColor(.green)
-                    .frame(width: .infinity, height: 200)
+                    .foregroundColor(.init(Color.RGBColorSpace.sRGB, red: 0.51, green: 0.27, blue: 0.63, opacity: 1))
+                    .frame(width: 428, height: 200)
+
                 HStack{
                     Image(systemName: "person.crop.circle")
                         .resizable()
@@ -37,37 +40,39 @@ struct AppProfileMenu: View {
                         Text("PhoneNumber").font(.title2)
                     }
                 }
-            }
+            }.position(x: 214, y: 0)
             
             HStack{
                 Text("Balance").font(.bold(.title)()).frame(width: 208, alignment: .leading)
                 Text("---").font(.title).frame(width: 208, alignment: .trailing)
-            }
+            }.position(x: 214, y: 10)
             
-            Text("Settings").font(.bold(.title)()).frame(width: 428, alignment: .leading).padding(1)
+            Text("Settings").font(.bold(.title)()).frame(width: 428, alignment: .leading).padding(1).position(x: 214, y: -60)
             NavigationLink(destination: UserProfile(), label: {
                 Text("Profile").font(.title).frame(width: 428, alignment: .leading).foregroundColor(.black)
                 }
             ).padding(1).onTapGesture {
                 print("working")
-            }
+            }.position(x: 214, y: -130)
             
             HStack{
-                Text("Payment Methods").font(.title).frame(width: 210, alignment: .leading)
+                Text("Payment Methods").font(.title).frame(width: 300, alignment: .leading)
                 Picker("Payment Methods", selection: $selectedMethod) {
                     Text("Cash").tag(PaymentMethods.Cash).font(.largeTitle)
                     Text("Card").tag(PaymentMethods.Card).font(.largeTitle)
                     Text("Google Pay").tag(PaymentMethods.GooglePay).font(.largeTitle)
                     Text("Apple Pay").tag(PaymentMethods.ApplePay).font(.largeTitle)
-                }.font(.largeTitle).frame(width: 210, alignment: .trailing)
-            }
+                }.font(.largeTitle).frame(width: 118, alignment: .trailing)
+            }.position(x: 214, y: -210)
+            
+            Text("Promocodes").font(.title).frame(width: 420, alignment: .leading).position(x: 214, y: -280)
             
             ZStack{
                 //DownToolBar
                 RoundedRectangle(cornerRadius: 10)
-                    .frame(width: .infinity, height: 150)
+                    .frame(width: 428, height: 150)
                     .ignoresSafeArea()
-                    .foregroundColor(.green)
+                    .foregroundColor(.init(Color.RGBColorSpace.sRGB, red: 0.51, green: 0.27, blue: 0.63, opacity: 1))
                 HStack(alignment: .top, spacing: 35){
                     Image(systemName: "house")
                         .resizable()
@@ -87,14 +92,16 @@ struct AppProfileMenu: View {
                         .onTapGesture{
                             print("Tapped")
                         }
-                }.frame(width: .infinity, height: 100, alignment: .top)
-            }.position(x: 214, y: 500)
-        }.background(.gray)
+                    }.frame(width: 428, height: 100, alignment: .top)
+                }.position(x: 214, y: 100)
+            }.background(.white)
+        }
     }
 }
 
 struct AppProfileMenu_Previews: PreviewProvider {
     static var previews: some View {
         AppProfileMenu()
+.previewInterfaceOrientation(.portrait)
     }
 }
