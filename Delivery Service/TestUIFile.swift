@@ -30,17 +30,104 @@ struct TestUIFile: View {
         return result
     }
     
+    let items = [GridItem(.adaptive(minimum: 214, maximum: 428))]
+//    let data = (1...100).map { "Item \($0)" }
+    enum PaymentMethods: String, CaseIterable, Identifiable {
+        case Card, GooglePay, Cash, ApplePay
+        var id: Self { self }
+    }
+    @State private var selectedMethod: PaymentMethods = .Cash
     var body: some View {
-        VStack{
-            TextField("PhoneNumber", text: $PhoneNumber).keyboardType(.numberPad).frame(height: 300).background(.green)
-            Button("Click"){
-                if PhoneNumber.count == 11{
-                    print(formatPhoneNumber(number: PhoneNumber))
-                }
-                else{
-                    print("Error")
+//        VStack{
+//            TextField("PhoneNumber", text: $PhoneNumber).keyboardType(.numberPad).frame(height: 300).background(.green)
+//            Button("Click"){
+//                if PhoneNumber.count == 11{
+//                    print(formatPhoneNumber(number: PhoneNumber))
+//                }
+//                else{
+//                    print("Error")
+//                }
+//            }
+//        }
+        NavigationView{
+            ScrollView {
+                LazyVGrid(columns: items){
+                    ZStack{
+                        RoundedRectangle(cornerRadius: 10)
+                            .foregroundColor(.init(Color.RGBColorSpace.sRGB, red: 0.51, green: 0.27, blue: 0.63, opacity: 1))
+                            .frame(width: 428, height: 200).opacity(0.9)
+
+                        HStack{
+                            Image(systemName: "person.crop.circle")
+                                .resizable()
+                                .frame(width: 100, height: 100)
+                            VStack{
+                                Text("Name SecondName").font(.title).padding()
+                                Text("PhoneNumber").font(.title2)
+                            }
+                        }
+                    }
+                    Text("Balance").font(.bold(.title)()).frame(width: 428, alignment: .leading)
+                    HStack{
+                        Text("Balance").font(.title).frame(width: 210, alignment: .leading)
+                        Text("---").font(.title).frame(width: 210, alignment: .trailing)
+                    }.padding(0.5)
+                    HStack{
+                        Text("Bonuses").font(.title).frame(width: 210, alignment: .leading)
+                        Text("---").font(.title).frame(width: 210, alignment: .trailing)
+                    }
+                    Text("Settings").font(.bold(.title)()).frame(width: 428, alignment: .leading).padding(1)
+                    NavigationLink(destination: UserProfile(), label: {
+                        Text("Profile").font(.title).frame(width: 428, alignment: .leading).foregroundColor(.black)
+                        }
+                    ).padding(1).onTapGesture {
+                        print("working")
+                    }
+                    HStack{
+                        Text("Payment Methods").font(.title).frame(width: 300, alignment: .leading)
+                        Picker("Payment Methods", selection: $selectedMethod) {
+                            Text("Cash").tag(PaymentMethods.Cash).font(.largeTitle)
+                            Text("Card").tag(PaymentMethods.Card).font(.largeTitle)
+                            Text("Google Pay").tag(PaymentMethods.GooglePay).font(.largeTitle)
+                            Text("Apple Pay").tag(PaymentMethods.ApplePay).font(.largeTitle)
+                        }.font(.largeTitle).frame(width: 118, alignment: .trailing)
+                    }
+                    
+                    Text("Promocodes").font(.title).frame(width: 420, alignment: .leading)
+                    
+                    
+                    
+                    ZStack{
+                        //DownToolBar
+                        RoundedRectangle(cornerRadius: 10)
+                            .frame(width: 428, height: 150)
+                            .ignoresSafeArea()
+                            .foregroundColor(.init(Color.RGBColorSpace.sRGB, red: 0.51, green: 0.27, blue: 0.63, opacity: 1))
+                        HStack(alignment: .top, spacing: 35){
+                            Image(systemName: "house")
+                                .resizable()
+                                .frame(width: 50, height: 50)
+                            Image("SpoonPng")
+                                .resizable()
+                                .frame(width: 50, height: 50)
+                            Image(systemName: "magnifyingglass.circle")
+                                .resizable()
+                                .frame(width: 50, height: 50)
+                            Image(systemName: "cart")
+                                .resizable()
+                                .frame(width: 50, height: 50)
+                            Image(systemName: "person.crop.circle")
+                                .resizable()
+                                .frame(width: 50, height: 50)
+                                .onTapGesture{
+                                    print("Tapped")
+                                }
+                            }.frame(width: 428, height: 100, alignment: .top)
+                    }.position(x: 214, y: 240)
                 }
             }
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationTitle("Profile")
         }
     }
 }
