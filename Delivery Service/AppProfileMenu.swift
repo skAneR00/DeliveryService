@@ -81,31 +81,35 @@ struct AppProfileMenu: View {
                             .ignoresSafeArea()
                             .foregroundColor(.init(Color.RGBColorSpace.sRGB, red: 0.51, green: 0.27, blue: 0.63, opacity: 1))
                         HStack(alignment: .top, spacing: 35){
-                            Image(systemName: "house")
-                                .resizable()
-                                .frame(width: 50, height: 50)
-                            Image("SpoonPng")
-                                .resizable()
-                                .frame(width: 50, height: 50)
-                            Image(systemName: "magnifyingglass.circle")
-                                .resizable()
-                                .frame(width: 50, height: 50)
-                            Image(systemName: "cart")
-                                .resizable()
-                                .frame(width: 50, height: 50)
+                            NavigationLink(destination: AppMainMenu(), label: {
+                                Image(systemName: "house")
+                                    .resizable()
+                                    .frame(width: 50, height: 50)
+                            }).colorMultiply(.black)
+                            NavigationLink(destination: TestUIFile(), label: {
+                                Image("SpoonPng")
+                                    .resizable()
+                                    .frame(width: 50, height: 50)
+                            })
+                            NavigationLink(destination: TestUIFile(), label: {
+                                Image(systemName: "magnifyingglass.circle")
+                                    .resizable()
+                                    .frame(width: 50, height: 50)
+                            }).colorMultiply(.black)
+                            NavigationLink(destination: TestUIFile(), label: {
+                                Image(systemName: "cart")
+                                    .resizable()
+                                    .frame(width: 50, height: 50)
+                            }).colorMultiply(.black)
                             Image(systemName: "person.crop.circle")
                                 .resizable()
                                 .frame(width: 50, height: 50)
-                                .onTapGesture{
-                                    print("Tapped")
-                                }
                             }.frame(width: 428, height: 100, alignment: .top)
                     }.position(x: 214, y: 240)
                 }
-            }
-            .navigationBarTitleDisplayMode(.inline)
+            }.navigationBarTitleDisplayMode(.inline)
             .navigationTitle("Profile")
-        }
+        }.navigationBarHidden(true)
     }
 }
 

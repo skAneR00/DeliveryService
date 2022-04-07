@@ -18,7 +18,7 @@ struct AppMainMenu: View {
                     ScrollView{
                         Text("Actions:").font(.title)
                         
-                        ScrollView(.horizontal) {
+                        ScrollView(.horizontal,showsIndicators: false) {
                             HStack(spacing: 20) {
                                 ForEach(0..<5) {_ in
                                     Image("RegistrationBackground")
@@ -34,7 +34,7 @@ struct AppMainMenu: View {
                         
                         Text("Restaurants: ").font(.title)
                         
-                        ScrollView(.horizontal) {
+                        ScrollView(.horizontal, showsIndicators: false) {
                             HStack(spacing: 20) {
                                 ForEach(0..<5) {_ in
                                     Image("RegistrationBackground")
@@ -50,7 +50,7 @@ struct AppMainMenu: View {
                         
                         Text("Productcs: ").font(.title)
                         
-                        ScrollView(.horizontal) {
+                        ScrollView(.horizontal, showsIndicators: false) {
                             HStack(spacing: 20) {
                                 ForEach(0..<5) {_ in
                                     Image("RegistrationBackground")
@@ -75,27 +75,33 @@ struct AppMainMenu: View {
                             Image(systemName: "house")
                                 .resizable()
                                 .frame(width: 50, height: 50)
-                            Image("SpoonPng")
-                                .resizable()
-                                .frame(width: 50, height: 50)
-                            Image(systemName: "magnifyingglass.circle")
-                                .resizable()
-                                .frame(width: 50, height: 50)
-                            Image(systemName: "cart")
-                                .resizable()
-                                .frame(width: 50, height: 50)
-                            Image(systemName: "person.crop.circle")
-                                .resizable()
-                                .frame(width: 50, height: 50)
-                                .onTapGesture{
-                                    print("Tapped")
-                                }
+                            NavigationLink(destination: TestUIFile(), label: {
+                                Image("SpoonPng")
+                                    .resizable()
+                                    .frame(width: 50, height: 50)
+                            })
+                            NavigationLink(destination: TestUIFile(), label: {
+                                Image(systemName: "magnifyingglass.circle")
+                                    .resizable()
+                                    .frame(width: 50, height: 50)
+                            }).colorMultiply(.black)
+                            NavigationLink(destination: TestUIFile(), label: {
+                                Image(systemName: "cart")
+                                    .resizable()
+                                    .frame(width: 50, height: 50)
+                            }).colorMultiply(.black)
+                            NavigationLink(destination: AppProfileMenu(), label: {
+                                Image(systemName: "person.crop.circle")
+                                    .resizable()
+                                    .frame(width: 50, height: 50)
+                            }).colorMultiply(.black)
                             }.frame(width: 428, height: 100, alignment: .top)
                     }.position(x: 214, y: 780)
                 }
-            }.navigationTitle("Menu")
+            }
+            .navigationTitle("Menu")
                 .navigationBarTitleDisplayMode(.inline)
-        }
+        }.navigationBarHidden(true)
     }
 }
 

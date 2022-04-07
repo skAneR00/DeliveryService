@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8459F38527FEFFC6001D5C2A /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8459F38427FEFFC6001D5C2A /* SearchController.swift */; };
+		8459F38727FF0110001D5C2A /* AppSearchMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8459F38627FF0110001D5C2A /* AppSearchMenu.swift */; };
 		845B307627DA0F90009AA239 /* FirstTimeChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845B307527DA0F90009AA239 /* FirstTimeChecker.swift */; };
 		845B307827DA186B009AA239 /* AppMainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845B307727DA186B009AA239 /* AppMainMenu.swift */; };
 		848028CD27CB6F3D00C2A0A7 /* TestUIFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848028CC27CB6F3D00C2A0A7 /* TestUIFile.swift */; };
@@ -43,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8459F38427FEFFC6001D5C2A /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
+		8459F38627FF0110001D5C2A /* AppSearchMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSearchMenu.swift; sourceTree = "<group>"; };
 		845B307527DA0F90009AA239 /* FirstTimeChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTimeChecker.swift; sourceTree = "<group>"; };
 		845B307727DA186B009AA239 /* AppMainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMainMenu.swift; sourceTree = "<group>"; usesTabs = 0; };
 		848028CC27CB6F3D00C2A0A7 /* TestUIFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUIFile.swift; sourceTree = "<group>"; };
@@ -125,6 +129,8 @@
 				848028CC27CB6F3D00C2A0A7 /* TestUIFile.swift */,
 				84FEAC2327C7981A00CA952E /* Assets.xcassets */,
 				84FEAC2527C7981A00CA952E /* Preview Content */,
+				8459F38427FEFFC6001D5C2A /* SearchController.swift */,
+				8459F38627FF0110001D5C2A /* AppSearchMenu.swift */,
 			);
 			path = "Delivery Service";
 			sourceTree = "<group>";
@@ -289,8 +295,10 @@
 				848028CD27CB6F3D00C2A0A7 /* TestUIFile.swift in Sources */,
 				84FEAC4A27C79B9300CA952E /* Registration.swift in Sources */,
 				84FEFD8727D48EED00FF7E06 /* UserDataBase.xcdatamodeld in Sources */,
+				8459F38727FF0110001D5C2A /* AppSearchMenu.swift in Sources */,
 				84B1282127EC895900721581 /* UserProfile.swift in Sources */,
 				84899E3D27D0D4E500363BE2 /* ContentView.swift in Sources */,
+				8459F38527FEFFC6001D5C2A /* SearchController.swift in Sources */,
 				84C1DEA227E71C540093A1E8 /* AppProfileMenu.swift in Sources */,
 				845B307627DA0F90009AA239 /* FirstTimeChecker.swift in Sources */,
 				84FEFD8927D48F9F00FF7E06 /* DataBaseController.swift in Sources */,
