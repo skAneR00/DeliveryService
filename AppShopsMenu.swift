@@ -1,14 +1,13 @@
 //
-//  AppSearchMenu.swift
+//  AppShopsMenu.swift
 //  Delivery Service
 //
-//  Created by Admin on 07.04.2022.
+//  Created by Admin on 10.04.2022.
 //
 
 import SwiftUI
 
-struct AppSearchMenu: View {
-    
+struct AppShopsMenu: View {
     let raiting : Double = 10.0
     let deliveryCost = 200
     let items = [GridItem(.adaptive(minimum: 214, maximum: 428))]
@@ -24,7 +23,7 @@ struct AppSearchMenu: View {
                                 .resizable()
                                 .cornerRadius(10)
                                 .frame(height: 300)
-                            Text("RestaurantName").font(.title2)
+                            Text("ShopName").font(.title2)
                             HStack(spacing: 10){
                                 Text("Delivery cost: \(deliveryCost)")
                                 Text("Raiting: \(NSString(format:"%.2f", raiting))")
@@ -35,7 +34,7 @@ struct AppSearchMenu: View {
                                 .resizable()
                                 .cornerRadius(10)
                                 .frame(height: 300)
-                            Text("RestaurantName").font(.title2)
+                            Text("ShopName").font(.title2)
                             HStack(spacing: 10){
                                 Text("Delivery cost: \(deliveryCost)")
                                 Text("Raiting: \(NSString(format:"%.2f", raiting))")
@@ -60,15 +59,15 @@ struct AppSearchMenu: View {
                                 Image("SpoonPng")
                                     .resizable()
                                     .frame(width: 50, height: 50)
-                            })
-                            Image(systemName: "magnifyingglass.circle")
-                                .resizable()
-                                .frame(width: 50, height: 50)
-                            NavigationLink(destination: AppShopsMenu(), label: {
-                                Image(systemName: "cart")
+                            }).colorMultiply(.black)
+                            NavigationLink(destination: AppSearchMenu(), label: {
+                                Image(systemName: "magnifyingglass.circle")
                                     .resizable()
                                     .frame(width: 50, height: 50)
                             }).colorMultiply(.black)
+                            Image(systemName: "cart")
+                                .resizable()
+                                .frame(width: 50, height: 50)
                             NavigationLink(destination: AppProfileMenu(), label: {
                                 Image(systemName: "person.crop.circle")
                                     .resizable()
@@ -77,14 +76,14 @@ struct AppSearchMenu: View {
                             }.frame(width: 428, height: 100, alignment: .top)
                     }.position(x: 214, y: 780)
                 }
-            }.navigationTitle("Restaurants")
+            }.navigationTitle("The Shops")
                 .navigationBarTitleDisplayMode(.inline)
         }.navigationBarHidden(true)
     }
 }
 
-struct AppSearchMenu_Previews: PreviewProvider {
+struct AppShopsMenu_Previews: PreviewProvider {
     static var previews: some View {
-        AppSearchMenu()
+        AppShopsMenu()
     }
 }

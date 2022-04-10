@@ -75,17 +75,17 @@ struct AppMainMenu: View {
                             Image(systemName: "house")
                                 .resizable()
                                 .frame(width: 50, height: 50)
-                            NavigationLink(destination: TestUIFile(), label: {
+                            NavigationLink(destination: AppRestaurantMenu(), label: {
                                 Image("SpoonPng")
                                     .resizable()
                                     .frame(width: 50, height: 50)
                             })
-                            NavigationLink(destination: TestUIFile(), label: {
+                            NavigationLink(destination: AppSearchMenu(), label: {
                                 Image(systemName: "magnifyingglass.circle")
                                     .resizable()
                                     .frame(width: 50, height: 50)
                             }).colorMultiply(.black)
-                            NavigationLink(destination: TestUIFile(), label: {
+                            NavigationLink(destination: AppShopsMenu(), label: {
                                 Image(systemName: "cart")
                                     .resizable()
                                     .frame(width: 50, height: 50)

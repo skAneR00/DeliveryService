@@ -1,13 +1,13 @@
 //
-//  AppSearchMenu.swift
+//  AppRestaurantMenu.swift
 //  Delivery Service
 //
-//  Created by Admin on 07.04.2022.
+//  Created by Admin on 10.04.2022.
 //
 
 import SwiftUI
 
-struct AppSearchMenu: View {
+struct AppRestaurantMenu: View {
     
     let raiting : Double = 10.0
     let deliveryCost = 200
@@ -56,15 +56,15 @@ struct AppSearchMenu: View {
                                     .resizable()
                                     .frame(width: 50, height: 50)
                             }).colorMultiply(.black)
-                            NavigationLink(destination: AppRestaurantMenu(), label: {
-                                Image("SpoonPng")
-                                    .resizable()
-                                    .frame(width: 50, height: 50)
-                            })
-                            Image(systemName: "magnifyingglass.circle")
+                            Image("SpoonPng")
                                 .resizable()
                                 .frame(width: 50, height: 50)
-                            NavigationLink(destination: AppShopsMenu(), label: {
+                            NavigationLink(destination: AppSearchMenu(), label: {
+                                Image(systemName: "magnifyingglass.circle")
+                                    .resizable()
+                                    .frame(width: 50, height: 50)
+                            }).colorMultiply(.black)
+                            NavigationLink(destination: TestUIFile(), label: {
                                 Image(systemName: "cart")
                                     .resizable()
                                     .frame(width: 50, height: 50)
@@ -83,8 +83,8 @@ struct AppSearchMenu: View {
     }
 }
 
-struct AppSearchMenu_Previews: PreviewProvider {
+struct AppRestaurantMenu_Previews: PreviewProvider {
     static var previews: some View {
-        AppSearchMenu()
+        AppRestaurantMenu()
     }
 }
