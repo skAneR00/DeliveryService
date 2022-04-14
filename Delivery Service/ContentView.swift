@@ -10,8 +10,8 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
 //        TestUIFile()
-//        Registration()
-        AppMainMenu()
+        Registration()
+//        AppMainMenu()
 //        UserProfile()
 //        AppProfileMenu()
     }
