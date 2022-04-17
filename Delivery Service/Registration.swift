@@ -56,9 +56,11 @@ struct NumberRegistration : View{
             Text("Enter your number for start").position(x: 150,y: 650).zIndex(2).font(.title2)
             TextField("Your Phone Number", text: $PhoneNumber).frame(minWidth: 300, maxWidth: 428, minHeight: 80, maxHeight: 80).position(x: 240, y: 700).zIndex(2).font(.title2)
             RoundedRectangle(cornerRadius: 10).frame(minWidth: 0, idealWidth: .infinity, maxWidth: .infinity, minHeight: 0, idealHeight: 200, maxHeight: 250).foregroundColor(Color.white).zIndex(1).opacity(0.95).position(x: 215, y: 730)
-            NavigationLink(destination: EmailRegistration(), label: {
-                Text("Continue").font(.title2)
-            }).position(x: 214, y: 770).zIndex(2)
+            if PhoneNumber.count >= 10{
+                NavigationLink(destination: EmailRegistration(), label: {
+                    Text("Continue").font(.title2)
+                }).position(x: 214, y: 770).zIndex(2)
+            }
             }.navigationBarTitleDisplayMode(.inline)
         }.navigationBarHidden(true)
     }
@@ -68,13 +70,16 @@ struct NumberRegistration : View{
 struct EmailRegistration : View{
     
     @State var EmailAdress: String = ""
+    @State var flag: Bool!
+    
     let typesOfMails = ["@mail.ru","@gmail.com","@yahoo.com"]
+    
     let columns = [GridItem(.adaptive(minimum: 214, maximum: 428))]
     
     func emptyChecker(){
         typesOfMails.forEach{
             if(EmailAdress.contains($0)){
-                print("Succes!!")
+                flag = true
             }
         }
     }
@@ -95,11 +100,15 @@ struct EmailRegistration : View{
                     NavigationLink(destination: NumberRegistration(), label: {
                         Text("Back").font(.title2)
                     }).zIndex(2).padding(.trailing)
-                    NavigationLink(destination: InitialsRegistration(), label: {
-                        Text("Continue").font(.title2)
-                    }).zIndex(2).padding(.leading)
-                    Button("Click me pls"){
-                        emptyChecker()
+                    if flag == true{
+                        NavigationLink(destination: InitialsRegistration(), label: {
+                            Text("Continue").font(.title2)
+                        }).zIndex(2).padding(.leading)
+                    }
+                    else{
+                        Button("Continue"){
+                            emptyChecker()
+                        }.zIndex(2).padding(.leading).font(.title2)
                     }
                 }.frame(width: 428).position(x: 214, y: 770).zIndex(2)
                 
@@ -126,9 +135,11 @@ struct InitialsRegistration : View{
                     NavigationLink(destination: EmailRegistration(), label: {
                         Text("Back").font(.title2)
                     }).zIndex(2).padding(.trailing)
-                    NavigationLink(destination: AppMainMenu(), label: {
-                        Text("Continue").font(.title2)
-                    }).zIndex(2).padding(.leading)
+                    if FirstName.count > 1 && SecondName.count > 1{
+                        NavigationLink(destination: AppMainMenu(), label: {
+                            Text("Continue").font(.title2)
+                        }).zIndex(2).padding(.leading)
+                    }
                 }.frame(width: 428).position(x: 214, y: 770).zIndex(2)
             }.navigationBarTitleDisplayMode(.inline)
         }.navigationBarHidden(true)

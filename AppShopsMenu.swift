@@ -19,7 +19,7 @@ struct AppShopsMenu: View {
                     
                     ScrollView{
                         VStack(alignment: .leading){
-                            Image("RegistrationBackground")
+                            Image("Me")
                                 .resizable()
                                 .cornerRadius(10)
                                 .frame(height: 300)
@@ -30,7 +30,7 @@ struct AppShopsMenu: View {
                             }
                         }.padding()
                         VStack(alignment: .leading){
-                            Image("RegistrationBackground")
+                            Image("Vova")
                                 .resizable()
                                 .cornerRadius(10)
                                 .frame(height: 300)

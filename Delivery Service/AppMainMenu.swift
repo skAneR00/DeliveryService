@@ -21,7 +21,7 @@ struct AppMainMenu: View {
                         ScrollView(.horizontal,showsIndicators: false) {
                             HStack(spacing: 20) {
                                 ForEach(0..<5) {_ in
-                                    Image("RegistrationBackground")
+                                    Image("Stas")
                                         .resizable()
                                         .frame(width: 150, height: 200)
                                         .cornerRadius(10)
@@ -37,7 +37,7 @@ struct AppMainMenu: View {
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack(spacing: 20) {
                                 ForEach(0..<5) {_ in
-                                    Image("RegistrationBackground")
+                                    Image("GeniusVHalate")
                                         .resizable()
                                         .frame(width: 150, height: 200)
                                         .cornerRadius(10)
@@ -53,7 +53,7 @@ struct AppMainMenu: View {
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack(spacing: 20) {
                                 ForEach(0..<5) {_ in
-                                    Image("RegistrationBackground")
+                                    Image("Ildar")
                                         .resizable()
                                         .frame(width: 150, height: 200)
                                         .cornerRadius(10)

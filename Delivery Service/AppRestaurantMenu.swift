@@ -20,7 +20,7 @@ struct AppRestaurantMenu: View {
                     
                     ScrollView{
                         VStack(alignment: .leading){
-                            Image("RegistrationBackground")
+                            Image("food")
                                 .resizable()
                                 .cornerRadius(10)
                                 .frame(height: 300)
