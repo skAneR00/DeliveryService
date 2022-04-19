@@ -80,11 +80,6 @@ struct AppMainMenu: View {
                                     .resizable()
                                     .frame(width: 50, height: 50)
                             })
-                            NavigationLink(destination: AppSearchMenu(), label: {
-                                Image(systemName: "magnifyingglass.circle")
-                                    .resizable()
-                                    .frame(width: 50, height: 50)
-                            }).colorMultiply(.black)
                             NavigationLink(destination: AppShopsMenu(), label: {
                                 Image(systemName: "cart")
                                     .resizable()

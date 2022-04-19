@@ -61,9 +61,6 @@ struct AppSearchMenu: View {
                                     .resizable()
                                     .frame(width: 50, height: 50)
                             })
-                            Image(systemName: "magnifyingglass.circle")
-                                .resizable()
-                                .frame(width: 50, height: 50)
                             NavigationLink(destination: AppShopsMenu(), label: {
                                 Image(systemName: "cart")
                                     .resizable()

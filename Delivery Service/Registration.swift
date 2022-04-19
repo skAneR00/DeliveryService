@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Registration: View {
     var body: some View {
-        NumberRegistration()        
+        UserRegistration()
     }
 }
 
@@ -24,9 +24,11 @@ struct Registration_Previews: PreviewProvider {
 struct NumberRegistration : View{
     
     @State var PhoneNumber: String = ""
+    @State private var shouldTransit: Bool = false
+    
     
     @Environment(\.managedObjectContext) var  moc
-    @FetchRequest(sortDescriptors: []) var UserDatabase: FetchedResults<UserDataBase>
+    @FetchRequest(sortDescriptors: []) var UserData: FetchedResults<UserDataBase>
     
     func formatPhoneNumber(number: String) -> String{
         let mask = "+# (###) ###-##-##"
@@ -48,17 +50,39 @@ struct NumberRegistration : View{
         return result
     }
     
+    func registerNewUser() {
+        print("Succeful!")
+        do{
+            let user = UserDataBase(context: moc)
+            if PhoneNumber != "" {
+                user.phonenumber = formatPhoneNumber(number: PhoneNumber)
+                user.id = UUID()
+                print(user.phonenumber ?? "Unknow", user.id ?? "Unknow")
+                try moc.save()
+            }
+            else{
+                print("Error - PhoneNumber")
+            }
+        }catch{
+            print(error)
+        }
+    }
+    
     
     var body: some View {
         NavigationView{
         ZStack{
-            Image("Sanzhik").resizable().frame(minWidth: 0, maxWidth: .infinity, minHeight: 0,maxHeight: .infinity).edgesIgnoringSafeArea(.all)
+            Image("Sanhik").resizable().frame(minWidth: 0, maxWidth: .infinity, minHeight: 0,maxHeight: .infinity).edgesIgnoringSafeArea(.all)
             Text("Enter your number for start").position(x: 150,y: 650).zIndex(2).font(.title2)
             TextField("Your Phone Number", text: $PhoneNumber).frame(minWidth: 300, maxWidth: 428, minHeight: 80, maxHeight: 80).position(x: 240, y: 700).zIndex(2).font(.title2)
             RoundedRectangle(cornerRadius: 10).frame(minWidth: 0, idealWidth: .infinity, maxWidth: .infinity, minHeight: 0, idealHeight: 200, maxHeight: 250).foregroundColor(Color.white).zIndex(1).opacity(0.95).position(x: 215, y: 730)
-            if PhoneNumber.count >= 10{
-                NavigationLink(destination: EmailRegistration(), label: {
-                    Text("Continue").font(.title2)
+            if PhoneNumber.count == 11{
+                NavigationLink(destination: EmailRegistration(), isActive: $shouldTransit, label: {
+                    Text("Continue").font(.title2).onTapGesture {
+                        print("Saved")
+//                        self.registerNewUser()
+                        self.shouldTransit = true
+                    }
                 }).position(x: 214, y: 770).zIndex(2)
             }
             }.navigationBarTitleDisplayMode(.inline)
@@ -71,10 +95,32 @@ struct EmailRegistration : View{
     
     @State var EmailAdress: String = ""
     @State var flag: Bool!
+    @State private var shouldTransit: Bool = false
     
     let typesOfMails = ["@mail.ru","@gmail.com","@yahoo.com"]
     
     let columns = [GridItem(.adaptive(minimum: 214, maximum: 428))]
+    
+    
+    @Environment(\.managedObjectContext) var  moc
+    @FetchRequest(sortDescriptors: []) var UserData: FetchedResults<UserDataBase>
+    
+    func registerNewUser() {
+        print("Succeful!")
+        do{
+            let user = UserDataBase(context: moc)
+            if EmailAdress != "" {
+                user.email = EmailAdress
+                print(user.email ?? "Unknow", user.id ?? "Unknow")
+                try moc.save()
+            }
+            else{
+                print("Error - PhoneNumber")
+            }
+        }catch{
+            print(error)
+        }
+    }
     
     func emptyChecker(){
         typesOfMails.forEach{
@@ -101,8 +147,11 @@ struct EmailRegistration : View{
                         Text("Back").font(.title2)
                     }).zIndex(2).padding(.trailing)
                     if flag == true{
-                        NavigationLink(destination: InitialsRegistration(), label: {
-                            Text("Continue").font(.title2)
+                        NavigationLink(destination: InitialsRegistration(),isActive: $shouldTransit, label: {
+                            Text("Continue").font(.title2).onTapGesture {
+//                                self.registerNewUser()
+                                self.shouldTransit = true
+                            }
                         }).zIndex(2).padding(.leading)
                     }
                     else{
@@ -142,6 +191,26 @@ struct InitialsRegistration : View{
                     }
                 }.frame(width: 428).position(x: 214, y: 770).zIndex(2)
             }.navigationBarTitleDisplayMode(.inline)
+        }.navigationBarHidden(true)
+    }
+}
+
+struct UserRegistration : View{
+    
+    @State var PhoneNumber: String = ""
+    @State var EmailAdress: String = ""
+    
+    
+    let columns = [GridItem(.adaptive(minimum: 214, maximum: 428))]
+    
+    var body: some View{
+        NavigationView{
+            ZStack{
+                Image("RegistrationBacground").resizable().ignoresSafeArea(.all)
+                TextField("Your Phone Number", text: $PhoneNumber).frame(width: 428, height: 80, alignment: .center).font(.title3).zIndex(2)
+                TextField("Your Email Adress", text: $EmailAdress).frame(width: 428, height: 80, alignment: .center).font(.title3)
+            }.navigationBarTitleDisplayMode(.inline)
+                .navigationTitle("Welcome!!")
         }.navigationBarHidden(true)
     }
 }
