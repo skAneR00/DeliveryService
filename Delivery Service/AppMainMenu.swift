@@ -70,7 +70,7 @@ struct AppMainMenu: View {
                         RoundedRectangle(cornerRadius: 10)
                             .frame(width: 428, height: 150)
                             .ignoresSafeArea()
-                            .foregroundColor(.init(Color.RGBColorSpace.sRGB, red: 0.51, green: 0.27, blue: 0.63, opacity: 1))
+                            .foregroundColor(.indigo)
                         HStack(alignment: .top, spacing: 35){
                             Image(systemName: "house")
                                 .resizable()
