@@ -31,7 +31,7 @@ struct AppProfileMenu: View {
                 LazyVGrid(columns: items){
                     ZStack{
                         RoundedRectangle(cornerRadius: 10)
-                            .foregroundColor(.init(Color.RGBColorSpace.sRGB, red: 0.51, green: 0.27, blue: 0.63, opacity: 1))
+                            .foregroundColor(.indigo)
                             .frame(width: 428, height: 200).opacity(0.9)
 
                         HStack{
@@ -100,7 +100,7 @@ struct AppProfileMenu: View {
                                 .resizable()
                                 .frame(width: 50, height: 50)
                             }.frame(width: 428, height: 100, alignment: .top)
-                    }.position(x: 214, y: 240)
+                    }.position(x: 214, y: 250)
                 }
             }.navigationBarTitleDisplayMode(.inline)
             .navigationTitle("Profile")

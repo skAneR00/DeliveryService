@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "IMG_2007.jpeg",
+      "filename" : "Sanzhar_New.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "IMG_2007-1.jpeg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "IMG_2007-2.jpeg",
       "idiom" : "universal",
       "scale" : "3x"
     }

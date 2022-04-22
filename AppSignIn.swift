@@ -47,7 +47,7 @@ struct AppSignIn: View {
         NavigationView{
             ZStack{
                 
-                Image("RegistrationBackground")
+                Image("Sanzhik")
                     .resizable()
                     .ignoresSafeArea(.all)
                 
@@ -80,12 +80,12 @@ struct AppSignIn: View {
                                 .foregroundColor(.white)
                         }).padding(.trailing)
                         
-                        NavigationLink(destination: AppMainMenu(), isActive: $shouldTransit, label: {
+                        NavigationLink(destination: AppMainMenu(), isActive: $flag, label: {
                             Text("Let's start!")
                                 .font(.title3)
                                 .onTapGesture {
                                     self.emptyChecker()
-                                    self.SignInChecker()
+//                                    self.SignInChecker()
                             }.foregroundColor(.white)
                         }).padding(.leading)
                         

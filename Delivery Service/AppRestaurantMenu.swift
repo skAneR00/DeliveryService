@@ -13,36 +13,51 @@ struct AppRestaurantMenu: View {
     let deliveryCost = 200
     let items = [GridItem(.adaptive(minimum: 214, maximum: 428))]
     
+    @State var flag: Bool = false
+    
+    
     var body: some View {
         NavigationView{
             LazyVGrid(columns: items){
                 ZStack{
                     
                     ScrollView{
-                        VStack(alignment: .leading){
-                            Image("food")
-                                .resizable()
-                                .cornerRadius(10)
-                                .frame(height: 300)
-                            Text("RestaurantName").font(.title2)
-                            HStack(spacing: 10){
-                                Text("Delivery cost: \(deliveryCost)")
-                                Text("Raiting: \(NSString(format:"%.2f", raiting))")
-                            }
-                        }.padding()
-                        VStack(alignment: .leading){
-                            Image("RegistrationBackground")
-                                .resizable()
-                                .cornerRadius(10)
-                                .frame(height: 300)
-                            Text("RestaurantName").font(.title2)
-                            HStack(spacing: 10){
-                                Text("Delivery cost: \(deliveryCost)")
-                                Text("Raiting: \(NSString(format:"%.2f", raiting))")
-                            }
-                        }.padding()
+                            VStack(alignment: .leading){
+                                NavigationLink(destination: AppRestaurantInfo(), isActive: $flag, label: {
+                                    Image("food")
+                                        .resizable()
+                                        .cornerRadius(10)
+                                        .frame(height: 300)
+                                        .onTapGesture {
+                                            AppMainMenu.ItemChecker = "food"
+                                            flag = true
+                                        }
+                                })
+                                Text("RestaurantName").font(.title2)
+                                HStack(spacing: 10){
+                                    Text("Delivery cost: \(deliveryCost)")
+                                    Text("Raiting: \(NSString(format:"%.2f", raiting))")
+                                }
+                            }.padding()
+                        
+                            VStack(alignment: .leading){
+                                NavigationLink(destination: AppRestaurantInfo(), isActive: $flag, label: {
+                                    Image("food")
+                                        .resizable()
+                                        .cornerRadius(10)
+                                        .frame(height: 300)
+                                        .onTapGesture {
+                                            AppMainMenu.ItemChecker = "food"
+                                            flag = true
+                                        }
+                                })
+                                Text("RestaurantName").font(.title2)
+                                HStack(spacing: 10){
+                                    Text("Delivery cost: \(deliveryCost)")
+                                    Text("Raiting: \(NSString(format:"%.2f", raiting))")
+                                }
+                            }.padding()
                     }
-                    
                     
                     ZStack{
                         //DownToolBar
@@ -59,7 +74,7 @@ struct AppRestaurantMenu: View {
                             Image("SpoonPng")
                                 .resizable()
                                 .frame(width: 50, height: 50)
-                            NavigationLink(destination: TestUIFile(), label: {
+                            NavigationLink(destination: AppShopsMenu(), label: {
                                 Image(systemName: "cart")
                                     .resizable()
                                     .frame(width: 50, height: 50)

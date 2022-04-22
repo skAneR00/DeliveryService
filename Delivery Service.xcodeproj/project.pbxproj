@@ -14,6 +14,7 @@
 		845B307827DA186B009AA239 /* AppMainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845B307727DA186B009AA239 /* AppMainMenu.swift */; };
 		848028CD27CB6F3D00C2A0A7 /* TestUIFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848028CC27CB6F3D00C2A0A7 /* TestUIFile.swift */; };
 		848424C827D49F6200FB5698 /* UISettingsFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848424C727D49F6200FB5698 /* UISettingsFile.swift */; };
+		8485A3D52812CF1A000AEB67 /* AppRestaurantInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8485A3D42812CF1A000AEB67 /* AppRestaurantInfo.swift */; };
 		84899E3D27D0D4E500363BE2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FEAC2127C7981800CA952E /* ContentView.swift */; };
 		84B1282127EC895900721581 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B1282027EC895900721581 /* UserProfile.swift */; };
 		84C1DEA227E71C540093A1E8 /* AppProfileMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C1DEA127E71C540093A1E8 /* AppProfileMenu.swift */; };
@@ -55,6 +56,7 @@
 		845B307727DA186B009AA239 /* AppMainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMainMenu.swift; sourceTree = "<group>"; usesTabs = 0; };
 		848028CC27CB6F3D00C2A0A7 /* TestUIFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUIFile.swift; sourceTree = "<group>"; };
 		848424C727D49F6200FB5698 /* UISettingsFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISettingsFile.swift; sourceTree = "<group>"; };
+		8485A3D42812CF1A000AEB67 /* AppRestaurantInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRestaurantInfo.swift; sourceTree = "<group>"; };
 		84B1282027EC895900721581 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		84C1DEA127E71C540093A1E8 /* AppProfileMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppProfileMenu.swift; sourceTree = "<group>"; };
 		84F08CF92802B6E4000CEB0C /* AppRestaurantMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRestaurantMenu.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 		84FEAC1327C7981800CA952E = {
 			isa = PBXGroup;
 			children = (
+				8485A3D42812CF1A000AEB67 /* AppRestaurantInfo.swift */,
 				841F67C528102A2C00F18DEA /* AppSignIn.swift */,
 				84F08CFB2802B8D0000CEB0C /* AppShopsMenu.swift */,
 				848424C727D49F6200FB5698 /* UISettingsFile.swift */,
@@ -308,6 +311,7 @@
 				84F08CFA2802B6E4000CEB0C /* AppRestaurantMenu.swift in Sources */,
 				8459F38727FF0110001D5C2A /* AppSearchMenu.swift in Sources */,
 				84F08CFC2802B8D0000CEB0C /* AppShopsMenu.swift in Sources */,
+				8485A3D52812CF1A000AEB67 /* AppRestaurantInfo.swift in Sources */,
 				84B1282127EC895900721581 /* UserProfile.swift in Sources */,
 				84899E3D27D0D4E500363BE2 /* ContentView.swift in Sources */,
 				8459F38527FEFFC6001D5C2A /* SearchController.swift in Sources */,

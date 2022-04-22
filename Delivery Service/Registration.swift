@@ -262,7 +262,7 @@ struct UserRegistration : View{
         NavigationView{
             ZStack{
                 
-                Image("RegistrationBackground")
+                Image("Sanzhik")
                     .resizable()
                     .ignoresSafeArea(.all)
                 
@@ -307,7 +307,7 @@ struct UserRegistration : View{
                         .font(.title3)
                         .zIndex(2)
                         .border(.white.opacity(0.4))
-                        .foregroundColor(.white)
+                        .foregroundColor(.white)    
                     
                     HStack{
                         
@@ -315,16 +315,16 @@ struct UserRegistration : View{
                             Text("I'm already registered!").font(.title3).foregroundColor(.white)
                         }).padding(.trailing)
                         
-                        NavigationLink(destination: AppMainMenu(), isActive: $shouldTransit, label: {
+                        NavigationLink(destination: AppMainMenu(), isActive: $flag, label: {
                             Text("Let's start!").font(.title3).onTapGesture {
                                 self.emptyChecker()
-                                self.RegistrationChecker()
+//                                self.RegistrationChecker()
                             }.foregroundColor(.white)
                         }).padding(.leading)
                     }
                 }.padding(.init(top: 0, leading: 20, bottom: 0, trailing: 20))
             }.navigationBarTitleDisplayMode(.inline)
-                .navigationTitle("Welcome!!")
+                .navigationTitle("Welcome!")
         }.navigationBarHidden(true)
     }
 }

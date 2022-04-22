@@ -12,34 +12,51 @@ struct AppShopsMenu: View {
     let deliveryCost = 200
     let items = [GridItem(.adaptive(minimum: 214, maximum: 428))]
     
+    @State var flag: Bool = false
+    
     var body: some View {
         NavigationView{
             LazyVGrid(columns: items){
                 ZStack{
                     
                     ScrollView{
-                        VStack(alignment: .leading){
-                            Image("Me")
-                                .resizable()
-                                .cornerRadius(10)
-                                .frame(height: 300)
-                            Text("ShopName").font(.title2)
-                            HStack(spacing: 10){
-                                Text("Delivery cost: \(deliveryCost)")
-                                Text("Raiting: \(NSString(format:"%.2f", raiting))")
-                            }
-                        }.padding()
-                        VStack(alignment: .leading){
-                            Image("Vova")
-                                .resizable()
-                                .cornerRadius(10)
-                                .frame(height: 300)
-                            Text("ShopName").font(.title2)
-                            HStack(spacing: 10){
-                                Text("Delivery cost: \(deliveryCost)")
-                                Text("Raiting: \(NSString(format:"%.2f", raiting))")
-                            }
-                        }.padding()
+                            VStack(alignment: .leading){
+                                NavigationLink(destination: AppRestaurantInfo(), isActive: $flag, label:{
+                                    Image("RegistrationBackground")
+                                        .resizable()
+                                        .cornerRadius(10)
+                                        .frame(height: 300)
+                                        .onTapGesture {
+                                            AppMainMenu.ItemChecker = "RegistrationBackground"
+                                            flag = true
+                                        }
+                                })
+                                Text("ShopName").font(.title2)
+                                HStack(spacing: 10){
+                                    Text("Delivery cost: \(deliveryCost)")
+                                    Text("Raiting: \(NSString(format:"%.2f", raiting))")
+                                }
+                            }.padding()
+                                .foregroundColor(.black)
+                        
+                            VStack(alignment: .leading){
+                                NavigationLink(destination: AppRestaurantInfo(), isActive: $flag, label: {
+                                    Image("Vova")
+                                        .resizable()
+                                        .cornerRadius(10)
+                                        .frame(height: 300)
+                                        .onTapGesture {
+                                            AppMainMenu.ItemChecker = "Vova"
+                                            flag = true
+                                        }
+                                })
+                                Text("ShopName").font(.title2)
+                                HStack(spacing: 10){
+                                    Text("Delivery cost: \(deliveryCost)")
+                                    Text("Raiting: \(NSString(format:"%.2f", raiting))")
+                                }
+                            }.padding()
+                            .foregroundColor(.black)
                     }
                     
                     

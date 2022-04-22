@@ -11,6 +11,10 @@ struct AppMainMenu: View {
     
     let columns = [GridItem(.adaptive(minimum: 214, maximum: 428))]
     
+    public static var ItemChecker: String = ""
+    @State var ShouldTransit: Bool = false
+    
+    
     var body: some View {
         NavigationView{
             LazyVGrid(columns: columns){
@@ -21,13 +25,18 @@ struct AppMainMenu: View {
                         ScrollView(.horizontal,showsIndicators: false) {
                             HStack(spacing: 20) {
                                 ForEach(0..<5) {_ in
-                                    Image("Stas")
-                                        .resizable()
-                                        .frame(width: 150, height: 200)
-                                        .cornerRadius(10)
-                                        .onTapGesture {
-                                            print("ItemWasTapped")
-                                        }
+                                    NavigationLink(destination: AppRestaurantInfo(),
+                                                   isActive: $ShouldTransit,
+                                                   label: {
+                                        Image("Stas")
+                                            .resizable()
+                                            .frame(width: 150, height: 200)
+                                            .cornerRadius(10)
+                                            .onTapGesture {
+                                                self.ShouldTransit = true
+                                                AppMainMenu.ItemChecker = "Stas"
+                                            }
+                                    })
                                 }
                             }
                         }
@@ -37,13 +46,18 @@ struct AppMainMenu: View {
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack(spacing: 20) {
                                 ForEach(0..<5) {_ in
-                                    Image("GeniusVHalate")
-                                        .resizable()
-                                        .frame(width: 150, height: 200)
-                                        .cornerRadius(10)
-                                        .onTapGesture {
-                                            print("ItemWasTapped")
-                                        }
+                                    NavigationLink(destination: AppRestaurantInfo(),
+                                                   isActive: $ShouldTransit,
+                                                   label: {
+                                        Image("GeniusVHalate")
+                                            .resizable()
+                                            .frame(width: 150, height: 200)
+                                            .cornerRadius(10)
+                                            .onTapGesture {
+                                                self.ShouldTransit = true
+                                                AppMainMenu.ItemChecker = "GeniusVHalate"
+                                            }
+                                    })
                                 }
                             }
                         }
@@ -53,13 +67,18 @@ struct AppMainMenu: View {
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack(spacing: 20) {
                                 ForEach(0..<5) {_ in
-                                    Image("Ildar")
-                                        .resizable()
-                                        .frame(width: 150, height: 200)
-                                        .cornerRadius(10)
-                                        .onTapGesture {
-                                            print("ItemWasTapped")
-                                        }
+                                    NavigationLink(destination: AppRestaurantInfo(),
+                                                   isActive: $ShouldTransit,
+                                                   label: {
+                                        Image("Ildar")
+                                            .resizable()
+                                            .frame(width: 150, height: 200)
+                                            .cornerRadius(10)
+                                            .onTapGesture {
+                                                self.ShouldTransit = true
+                                                AppMainMenu.ItemChecker = "Ildar"
+                                            }
+                                    })
                                 }
                             }
                         }
