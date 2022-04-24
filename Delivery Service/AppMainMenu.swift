@@ -13,8 +13,7 @@ struct AppMainMenu: View {
     
     public static var ItemChecker: String = ""
     @State var ShouldTransit: Bool = false
-    
-    
+
     var body: some View {
         NavigationView{
             LazyVGrid(columns: columns){

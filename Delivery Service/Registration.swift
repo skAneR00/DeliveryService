@@ -205,6 +205,10 @@ struct UserRegistration : View{
     
     let typesOfMails = ["@mail.ru","@gmail.com","@yahoo.com"]
     
+    public static var UserName: String = ""
+    public static var UserSecondName: String = ""
+    public static var UserPhoneNumber: String = ""
+    
     @State var shouldTransit: Bool = false
     @State var flag: Bool = false
     
@@ -318,6 +322,9 @@ struct UserRegistration : View{
                         NavigationLink(destination: AppMainMenu(), isActive: $flag, label: {
                             Text("Let's start!").font(.title3).onTapGesture {
                                 self.emptyChecker()
+                                UserRegistration.UserName = FirstName
+                                UserRegistration.UserSecondName = SecondName
+                                UserRegistration.UserPhoneNumber = PhoneNumber
 //                                self.RegistrationChecker()
                             }.foregroundColor(.white)
                         }).padding(.leading)

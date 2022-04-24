@@ -85,6 +85,7 @@ struct AppSignIn: View {
                                 .font(.title3)
                                 .onTapGesture {
                                     self.emptyChecker()
+                                    
 //                                    self.SignInChecker()
                             }.foregroundColor(.white)
                         }).padding(.leading)

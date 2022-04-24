@@ -39,8 +39,8 @@ struct AppProfileMenu: View {
                                 .resizable()
                                 .frame(width: 100, height: 100)
                             VStack{
-                                Text("Name SecondName").font(.title).padding()
-                                Text("PhoneNumber").font(.title2)
+                                Text("\(UserRegistration.UserName) \(UserRegistration.UserSecondName)").font(.title).padding()
+                                Text("Phone Number: \(UserRegistration.UserPhoneNumber)").font(.title2)
                             }
                         }
                     }
